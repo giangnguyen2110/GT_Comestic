@@ -1,0 +1,33 @@
+﻿@model NhomGT_ComesticShop.Models.Category
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0 rounded">
+                <div class="card-header bg-danger text-white">
+                    <h4 class="mb-0">Delete Category</h4>
+                </div>
+                <div class="card-body">
+                    <h5 class="text-danger mb-4">
+                        Bạn có chắc chắn muốn xoá danh mục này không?
+                    </h5>
+
+                    <div class="form-group mb-4">
+                        <label class="font-weight-bold">Tên danh mục</label>
+                        <input value="@Model.CategoryName" class="form-control" disabled />
+                    </div>
+
+                    <form asp-action="Delete" method="post">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" asp-for="Id" />
+
+                        <div class="text-right">
+                            <a asp-action="Index" class="btn btn-secondary px-4">Huỷ</a>
+                            <button type="submit" class="btn btn-danger px-4">Xoá</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

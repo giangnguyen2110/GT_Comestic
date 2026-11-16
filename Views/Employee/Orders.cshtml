@@ -1,0 +1,55 @@
+﻿@model List<NhomGT_ComesticShop.Models.Order>
+
+<h2>Đơn hàng</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Mã đơn</th>
+            <th>Hình thức giao/nhận</th>
+            <th>Ngày đặt</th>
+            <th>Số SP</th>
+            <th>Nhân viên duyệt</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="align-middle font-weight-bold">#@item.Id</td>
+
+                <td class="align-middle">
+                    @if (item.Receive.Contains("tại quầy") || item.Receive.Contains("cửa hàng"))
+                    {
+                        <span class="badge badge-warning text-dark"><i class="fa fa-store"></i> Tại quầy</span>
+                    }
+                    else
+                    {
+                        <span class="badge badge-info"><i class="fa fa-truck"></i> Giao tận nơi</span>
+                    }
+                </td>
+
+                <td class="align-middle">@item.CreatedAt.ToString("dd/MM/yyyy HH:mm")</td>
+
+                <td class="align-middle text-center">@item.OrderDetails.Count</td>
+
+                <td class="align-middle">
+                    @(item.Employee != null ? item.Employee.LastName + " " + item.Employee.FirstName : "---")
+                </td>
+
+                <td class="align-middle">
+                    @if (item.Status == 1)
+                    {
+                        <a asp-action="ApproveOrder" asp-route-id="@item.Id" class="btn btn-primary btn-sm px-3">Duyệt</a>
+                    }
+                    else
+                    {
+                        <span class="text-success font-weight-bold"><i class="fa fa-check-circle"></i> Đã duyệt</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

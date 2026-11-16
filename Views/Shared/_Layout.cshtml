@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html>
+<partial name="_Stylecss" />
+<body>
+    <partial name="_Header" />
+    <div>
+        @RenderBody()
+    </div>
+    <partial name="_Footer" />
+    <partial name="_JavaScript" />
+    @RenderSection("Scripts", required: false)
+    <div class="modal fade" id="productModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content" id="modalContent">
+            </div>
+        </div>
+    </div>
+    <div class="alert alert-info">
+        User: @User.Identity.Name <br>
+        Is Admin? @User.IsInRole("Admin") <br>
+        Is Employee? @User.IsInRole("Employee")
+    </div>
+</body>
+</html>

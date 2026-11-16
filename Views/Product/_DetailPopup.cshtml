@@ -1,0 +1,182 @@
+﻿@using System.Globalization
+@model NhomGT_ComesticShop.Models.Product
+@{
+    CultureInfo culture = new CultureInfo("vi-VN");
+    var defaultVariant = Model.ProductVariants?
+    .FirstOrDefault(v => v.IsDefault == true);
+
+var defaultImage = defaultVariant != null
+    ? Url.Content("~/ProductVariant/" + defaultVariant.ImageUrl)
+    : Url.Content("~/Picture/" + Model.Picture);
+    
+}
+<div class="modal-header border-0">
+    <h5 class="modal-title fw-bold">@Model.ProductName</h5>
+
+    <button type="button" class="close" data-dismiss="modal">
+        <span>&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div class="row">
+
+        <!-- IMAGE -->
+        <div class="col-md-5 text-center">
+            
+            <<img id="productImage"
+                 src="@defaultImage"
+                 class="img-fluid rounded" />
+        </div>
+
+        <!-- INFO -->
+        <div class="col-md-7">
+
+            <!-- GIÁ HIỂN THỊ -->
+            <h4 class="text-danger mb-3">
+                <span id="priceDisplay">
+                    @(Model.ProductVariants.FirstOrDefault()?.Price?.ToString("N0", culture))
+                </span>
+            </h4>
+
+            <p>@Model.Description</p>
+
+            @* <!-- VARIANTS -->
+            <div class="mb-3">
+                <label class="fw-bold">Dung tích / Biến thể</label>
+
+                <div class="d-flex flex-wrap">
+
+                    @foreach (var variant in Model.ProductVariants)
+                    {
+                        var optionText = string.Join(" / ",
+                        variant.ProductVariantOptionValues
+                        .Select(x => x.ProductOptionValue.Name)
+                        );
+
+                        <button type="button"
+                                class="btn btn-outline-dark variant-btn"
+                                data-variantuid="@variant.Uid"
+                                data-price="@variant.Price"
+                                data-image="@variant.ImageUrl"
+                                style="margin:5px;border-radius:20px;">
+                            @optionText
+                        </button>
+                    }
+
+                </div>
+            </div>
+ *@
+            @{
+                var optionGroups = Model.ProductVariants?
+                .SelectMany(v => v.ProductVariantOptionValues)
+                .GroupBy(x => x.ProductOptionValue.ProductOption.Name)
+                .Where(g => g.Key != null);
+            }
+
+            @foreach (var group in optionGroups)
+            {
+             @*    <div class="mb-3">
+
+                    <label class="fw-bold">@group.Key</label>
+
+                    <div class="d-flex flex-wrap">
+
+                        @foreach (var item in group
+                                            .GroupBy(x => x.ProductOptionValue.Name)
+                                            .Select(x => x.First()))
+                        {
+                            <button type="button"
+                                    class="btn btn-outline-dark option-btn"
+                                    data-option="@item.ProductOptionValue.Name"
+                                    data-group="@group.Key"
+                                    style="margin:5px;border-radius:20px;">
+
+                                @item.ProductOptionValue.Name
+
+                            </button>
+                        }
+
+                    </div>
+
+                </div> *@
+                <div class="mb-3">
+                    <label class="fw-bold">@group.Key</label>
+                    <div class="d-flex flex-wrap">
+                        @foreach (var item in group.GroupBy(x => x.ProductOptionValue.Name).Select(x => x.First()))
+                        {
+                            <button type="button"
+                                    class="btn btn-outline-dark option-btn"
+                                    data-option="@item.ProductOptionValue.Name"
+                                    data-group="@group.Key"
+                                    style="margin:5px; border-radius:20px;">
+                                @item.ProductOptionValue.Name
+                            </button>
+                        }
+                    </div>
+                </div>
+            }
+
+            <!-- ADD CART -->
+            <a href="javascript:void(0)"
+               id="addToCartBtn"
+               class="btn btn-success px-4 mt-3">
+                <i class="fa fa-shopping-cart"></i> Add to Cart
+            </a>
+
+            <button class="btn btn-secondary px-4 mt-3"
+                    data-dismiss="modal">
+                Back
+            </button>
+
+        </div>
+    </div>
+    @* <script>
+
+        const productVariants = @Html.Raw(
+                        System.Text.Json.JsonSerializer.Serialize(
+                                Model.ProductVariants.Select(v => new
+                                {
+                                        uid = v.Uid,
+                                        price = v.Price,
+                                        image = v.ImageUrl,
+
+                                        options = v.ProductVariantOptionValues
+                                                .Select(x => x.ProductOptionValue.Name)
+                                })
+                        )
+                );
+         const totalGroups = parseInt('@optionGroups.Count()');
+
+    </script> *@
+   @*  <script>
+    // Thay const bằng cách gán trực tiếp vào window
+    window.productVariants = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.ProductVariants.Select(v => new {
+        uid = v.Uid,
+        price = v.Price,
+        image = v.ImageUrl,
+        options = v.ProductVariantOptionValues.Select(x => x.ProductOptionValue.Name)
+    })));
+    
+    window.totalGroups = parseInt('@optionGroups.Count()');
+</script> *@
+  <script>
+    // Truyền thêm thuộc tính isDefault vào mảng JSON
+    window.productVariants = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.ProductVariants.Select(v => new {
+    uid = v.Uid,
+    price = v.Price,
+
+    image = Url.Content("~/ProductVariant/" + v.ImageUrl),
+
+    isDefault = v.IsDefault ?? false,
+
+    options = v.ProductVariantOptionValues.ToDictionary(
+        x => x.ProductOptionValue.ProductOption.Name,
+        x => x.ProductOptionValue.Name
+    )
+   })));
+    
+    // Đếm số nhóm option thực tế để JS dùng logic so sánh
+    window.totalGroups = parseInt('@(optionGroups?.Count() ?? 0)');
+</script>
+</div>
+

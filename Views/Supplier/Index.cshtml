@@ -1,0 +1,59 @@
+﻿@model List<NhomGT_ComesticShop.Models.Supplier>;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tbody tr:hover {
+            background-color: #cce5ff;
+        }
+    </style>
+    <table border="1" style="border-collapse: collapse; width:100%;">
+        <thead>
+            <tr>
+                <th>Mã nhà cung cấp</th>
+                <th>Tên công ty</th>
+                <th>Số điện thoại</th>
+                <th>Action</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var s in Model)
+            {
+                <tr>
+                    <td>@s.Id</td>
+                    <td>@s.CompanyName</td>
+                    <td>@s.Phone</td>
+                    <td>
+                        <a href="/Supplier/Create/@s.Id">Create</a> <br />
+                        <a href="/Supplier/Edit/@s.Id">Edit</a> <br />
+                        <a href="/Supplier/Delete/@s.Id"
+                           onclick="if(confirm('Xác nhận xóa không'))
+                                   {
+                                               document.getElementById('deleteForm-@s.Id').submit();
+                                   }">
+                            Delete
+                        </a>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}

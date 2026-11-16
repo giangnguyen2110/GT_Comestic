@@ -1,0 +1,9 @@
+﻿@model NhomGT_ComesticShop.DTOs.Momo.MomoExecuteResponseModel
+
+<div class="container text-center mt-5">
+    <h2 class="text-success">Thanh toán thành công!</h2>
+    <p>Mã đơn hàng: @Model.OrderId</p>
+    <p>Số tiền: @string.Format("{0:N0} VNĐ", double.Parse(Model.Amount))</p>
+    <p>Nội dung: @Model.OrderInfo</p>
+    <a href="/" class="btn btn-primary">Quay về trang chủ</a>
+</div>

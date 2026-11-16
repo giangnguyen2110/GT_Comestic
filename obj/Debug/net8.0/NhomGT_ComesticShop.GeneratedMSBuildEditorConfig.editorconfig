@@ -1,0 +1,189 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = NhomGT_ComesticShop
+build_property.RootNamespace = NhomGT_ComesticShop
+build_property.ProjectDir = C:\Users\Admin\Downloads\NhomGT_ComesticShop\NhomGT_ComesticShop\NhomGT_ComesticShop\NhomGT_ComesticShop\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Admin\Downloads\NhomGT_ComesticShop\NhomGT_ComesticShop\NhomGT_ComesticShop\NhomGT_ComesticShop
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Account/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxQcm9maWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Cart/CheckOut.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxDaGVja091dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Cart/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Category/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Category/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Category/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Category/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Employee/Orders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcT3JkZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Home/PageNotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYWdlTm90Rm91bmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Notification/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWZpY2F0aW9uXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/OrderDetail/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJEZXRhaWxcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Product/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Product/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Product/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Product/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Product/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Product/ProductItem.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQcm9kdWN0SXRlbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Product/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxTZWFyY2guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Product/_DetailPopup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxfRGV0YWlsUG9wdXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Product/_DetailPopupLuu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxfRGV0YWlsUG9wdXBMdXUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Shared/Components/Brands/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQnJhbmRzXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Shared/Components/Cart/CartPanel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2FydFxDYXJ0UGFuZWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Shared/Components/MenuCategory/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTWVudUNhdGVnb3J5XERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Shared/Components/MenuPrice/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTWVudVByaWNlXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Shared/_Footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Gb290ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Shared/_Header.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9IZWFkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Shared/_JavaScript.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9KYXZhU2NyaXB0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Shared/_Stylecss.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TdHlsZWNzcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Supplier/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcGxpZXJcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Supplier/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcGxpZXJcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Supplier/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcGxpZXJcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Supplier/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VwcGxpZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Downloads/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/NhomGT_ComesticShop/Views/Shared/_Layout_Save.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRfU2F2ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-g7nv4fhnpc

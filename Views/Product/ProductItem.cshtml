@@ -1,0 +1,88 @@
+﻿@using System.Globalization
+@model IEnumerable<NhomGT_ComesticShop.DTOs.ProductVM>
+@{
+    CultureInfo culture = new CultureInfo("vi-VN");
+    
+}
+@if (User.IsInRole("Admin"))
+{
+    <div class="col-12 mb-3 text-end">
+        <a asp-controller="Product"
+           asp-action="Create"
+           class="btn btn-success">
+            + Create Product
+        </a>
+    </div>
+}
+@foreach (var item in Model)
+{
+    <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
+        <div class="product-item bg-light mb-4">
+            <div class="product-img position-relative">
+
+                <a asp-action="Detail" asp-controller="Product" asp-route-id="@item.productId">
+                    <img src="@Url.Content("~/Picture/" + item.productImage)"
+                         class="product-img-item"
+                         alt="">
+                </a>
+
+                <div class="product-action">
+
+                    <a class="btn btn-outline-dark btn-square btn-detail"
+                       href="javascript:void(0)"
+                       data-id="@item.productId">
+                        <i class="fa fa-shopping-cart"></i>
+                    </a>
+
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <a class="btn btn-outline-dark btn-square"
+                           asp-controller="Product"
+                           asp-action="Edit"
+                           asp-route-id="@item.productId">
+                            <i class="fa fa-edit"></i>
+                        </a>
+
+                        <a class="btn btn-outline-dark btn-square"
+                           asp-controller="Product"
+                           asp-action="Delete"
+                           asp-route-id="@item.productId"
+                           onclick="return confirm('Bạn có chắc muốn xoá sản phẩm này?')">
+                            <i class="fa fa-trash"></i>
+                        </a>
+                    }
+
+                    <a class="btn btn-outline-dark btn-square"
+                       href="#">
+                        <i class="far fa-heart"></i>
+                    </a>
+
+                    <a class="btn btn-outline-dark btn-square btn-detail"
+                       href="javascript:void(0)"
+                       data-id="@item.productId">
+                        <i class="fa fa-search"></i>
+                    </a>
+
+                </div>
+
+            </div>
+            <div class="text-center py-4">
+
+                <a class="h6 text-decoration-none text-truncate" 
+                asp-action="Detail" asp-controller="Product" asp-route-id="@item.productId">@item.productName</a>
+                
+                <div class="d-flex align-items-center justify-content-center mt-2">
+                    <h5>@item.productPrice.ToString("N0", culture)</h5>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+}
+<div class="modal fade" id="productModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="modalContent">
+        </div>
+    </div>
+</div>
+

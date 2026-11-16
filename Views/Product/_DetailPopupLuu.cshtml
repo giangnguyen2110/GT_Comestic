@@ -1,0 +1,159 @@
+﻿@using System.Globalization
+@model NhomGT_ComesticShop.Models.Product
+@{
+    CultureInfo culture = new CultureInfo("vi-VN");
+    var optionGroups = Model.ProductVariants
+        .SelectMany(v => v.ProductVariantOptionValues)
+        .GroupBy(x => x.ProductOptionValue.ProductOption.Name);
+
+     // Variant mặc định
+    var defaultVariant = Model.ProductVariants
+        .FirstOrDefault(v => v.IsDefault == true);
+
+            // Ảnh hiển thị ban đầu
+    var imageUrl = defaultVariant != null
+        ? Url.Content("~/ProductVariant/" + defaultVariant.ImageUrl)
+        : Url.Content("~/Picture/" + Model.Picture);
+
+    // Serialize dữ liệu vào một biến tạm để nhét vào data-attribute
+    var variantJson = System.Text.Json.JsonSerializer.Serialize(Model.ProductVariants.Select(v => new {
+        uid = v.Uid,
+        price = v.Price,
+        image = v.ImageUrl, // Đảm bảo khớp với tên file ảnh của bạn
+        isDefault = v.IsDefault ?? false,
+        options = v.ProductVariantOptionValues.ToDictionary(
+            x => x.ProductOptionValue.ProductOption.Name,
+            x => x.ProductOptionValue.Name
+        )
+    }));
+    }
+
+<script>
+    // 1. Dữ liệu biến thể
+    window.productVariants = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.ProductVariants.Select(v => new {
+        uid = v.Uid,
+        price = v.Price,
+        image = v.ImageUrl,
+        isDefault = v.IsDefault ?? false,
+        options = v.ProductVariantOptionValues.ToDictionary(
+            x => x.ProductOptionValue.ProductOption.Name,
+            x => x.ProductOptionValue.Name
+        )
+    })));
+
+    // 2. Số lượng nhóm option (ví dụ: Màu, Size = 2)
+    window.totalGroups = @optionGroups.Count();
+    
+    // 3. (Tuỳ chọn) Gán luôn hàm chọn mặc định vào đây để đảm bảo nó chạy đúng lúc
+    function autoSelectDefaultVariant() {
+        let defaultVar = window.productVariants.find(v => v.isDefault === true);
+        if (defaultVar) {
+            Object.entries(defaultVar.options).forEach(([g, o]) => {
+                let btn = $(`.option-btn[data-group="${g}"][data-option="${o}"]`);
+                if(btn.length > 0) {
+                    btn.trigger('click');
+                }
+            });
+        }
+    }
+</script>
+
+<div class="modal-header border-0">
+    <h5 class="modal-title fw-bold">@Model.ProductName</h5>
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-5 text-center">
+              <img id="productImage"
+         src="@imageUrl"
+         class="img-fluid rounded" />
+        </div>
+        <div class="col-md-7">
+            <h4 class="text-danger mb-3">
+                <span id="priceDisplay">@Model.ProductVariants.FirstOrDefault()?.Price?.ToString("N0", culture)</span>
+            </h4>
+            <p>@Model.Description</p>
+
+            @foreach (var group in optionGroups)
+            {
+                <div class="mb-3">
+                    <label class="fw-bold">@group.Key</label>
+                    <div class="d-flex flex-wrap">
+                        @foreach (var val in group.Select(x => x.ProductOptionValue).DistinctBy(x => x.Name))
+                        {
+                            <button type="button" class="btn btn-outline-dark option-btn" 
+                                    data-group="@group.Key" data-option="@val.Name">
+                                @val.Name
+                            </button>
+                        }
+                    </div>
+                </div>
+            }
+
+            <a href="javascript:void(0)" id="addToCartBtn" class="btn btn-success px-4 mt-3">
+                <i class="fa fa-shopping-cart"></i> Add to Cart
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* 1. Định nghĩa màu Primary dựa trên CSS của bạn */
+    :root {
+        --brand-primary: #FFD333; /* Màu vàng từ style.min.css */
+        --brand-dark: #3D464D;    /* Màu dark từ style.min.css */
+    }
+
+    /* 2. Style cơ bản cho các nút option (bo tròn, tách xa) */
+    .option-btn {
+        border-radius: 20px !important;
+        padding: 8px 20px !important;
+        margin-right: 10px !important;
+        margin-bottom: 10px !important;
+        border: 1px solid #ced4da;
+        color: var(--brand-dark) !important;
+        background-color: white !important;
+        transition: all 0.3s ease;
+    }
+
+    /* 3. Style khi nút option ĐƯỢC CHỌN (Active) -> Dùng màu Primary */
+    .option-btn.active {
+        background-color: var(--brand-primary) !important;
+        border-color: var(--brand-primary) !important;
+        color: black !important; /* Chữ đen trên nền vàng để dễ đọc */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    /* Hover nhẹ cho nút */
+    .option-btn:hover:not(.active) {
+        background-color: #f8f9fa !important;
+        border-color: #b8c2cc !important;
+    }
+
+    /* 4. Đảm bảo nút Add to Cart cũng dùng màu Primary */
+    #addToCartBtn {
+        background-color: var(--brand-primary) !important;
+        border-color: var(--brand-primary) !important;
+        color: black !important;
+        border-radius: 20px !important;
+        font-weight: bold;
+    }
+    
+    #addToCartBtn:hover {
+        background-color: #f7ca1a !important; /* Màu vàng đậm hơn tí khi hover */
+    }
+    /* Giới hạn kích thước ảnh trong Modal */
+#productImage {
+    width: 100%;            /* Chiếm trọn chiều ngang cột 5 */
+    height: 350px;          /* Cố định chiều cao (bạn có thể chỉnh tùy ý) */
+    object-fit: contain;    /* Quan trọng: giữ nguyên tỷ lệ, không bị méo hình */
+    background-color: #f8f9fa; /* Màu nền nếu ảnh không lấp đầy khung */
+    border-radius: 8px;     /* Bo góc cho sang trọng */
+    transition: transform 0.3s ease; /* Hiệu ứng nhẹ */
+}
+#productImage:hover {
+    transform: scale(1.02); /* Phóng to nhẹ khi di chuột vào */
+    cursor: zoom-in;
+}
+</style>

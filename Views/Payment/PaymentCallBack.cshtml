@@ -1,0 +1,14 @@
+﻿@using NhomGT_ComesticShop.DTOs.Momo
+
+@model MomoExecuteResponseModel
+
+@{
+	ViewData["title"] = "Kết quả thông tin giao dịch thanh toán thành công";
+}
+<div class="container text-center mt-5">
+    <h2 class="text-success">Thanh toán thành công!</h2>
+    <p>Mã đơn hàng: @Model.OrderId</p>
+    <p>Số tiền: @Model.Amount</p>
+    <p>Nội dung: @Model.OrderInfo</p>
+    <a href="/" class="btn btn-primary">Quay về trang chủ</a>
+</div>
